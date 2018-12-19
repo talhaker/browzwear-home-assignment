@@ -156,8 +156,6 @@ class ClientsData extends Component {
     const countryKey = this.state.countries[index];
     const cities = this.getCityList(this.state.clientData[countryKey]);
     const cityKey = cities[0];
-    console.log("countryKey: ", countryKey);
-    console.log("cityKey: ", cityKey);
     const companies = this.state.clientData[countryKey][cityKey]
       .map(company => company.CompanyName)
       .sort((a, b) => a - b);
@@ -223,7 +221,6 @@ class ClientsData extends Component {
     Geocode.fromAddress(address).then(
       response => {
         const position = response.results[0].geometry.location;
-        console.log("position: ", position);
         this.setState({ position: position });
       },
       error => {

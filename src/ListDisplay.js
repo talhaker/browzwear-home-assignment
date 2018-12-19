@@ -45,7 +45,6 @@ class ListDisplay extends Component {
 
   displayList = () => {
     const { classes } = this.props;
-    console.log("displayedList: ", this.props.displayedList);
     return (
       <List className={classes.listContainer}>
         {this.props.displayedList.map((item, index) => {
