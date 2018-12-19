@@ -1,5 +1,5 @@
 This Project is a home assignmet for Browzwear.
-I implements the following requirements:
+It implements the following requirements:
 ______________________________________________________________________________________________________
 
 Use React to do the following:
