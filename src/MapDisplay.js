@@ -11,7 +11,8 @@ export class MapDisplay extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      position: {}
+      position: {},
+      firstTime: true
     };
   }
 
@@ -19,20 +20,30 @@ export class MapDisplay extends Component {
     this.setState({ position: this.props.position });
   };
 
+  componentWillReceiveProps = () => {
+    this.setState({
+      position: this.props.position,
+      firstTime: false
+    });
+  };
+
   render() {
+    const position = this.state.firstTime
+      ? this.state.position
+      : this.props.position;
     return (
       <Map
         google={this.props.google}
         style={mapStyles}
         className={"map"}
-        center={this.state.position}
+        center={position}
         zoom={14}
         onReady={this.updatePosition}
       >
         <Marker
           title={this.props.companyInfo.CompanyName}
           name={this.props.companyInfo.Address}
-          position={this.state.position}
+          position={position}
         />
       </Map>
     );
