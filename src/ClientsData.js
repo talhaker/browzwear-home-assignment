@@ -33,6 +33,9 @@ const styles = theme => ({
     boxShadow: "0px 0px 10px rgba(50, 50, 50, 0.75)",
     borderRadius: "10px"
   },
+  dataWrapper: {
+    paddingBottom: "20px"
+  },
   titleBox: {
     paddingLeft: "10px",
     fontSize: "x-large"
@@ -234,16 +237,16 @@ class ClientsData extends Component {
     const { classes } = this.props;
     return (
       <Grid container spacing={0} className={classes.titleBox}>
-        <Grid sm="2" className={classes.titleText}>
+        <Grid item xs={2} className={classes.titleText}>
           Countries
         </Grid>
-        <Grid sm="2" className={classes.titleText}>
+        <Grid item xs={2} className={classes.titleText}>
           Cities
         </Grid>
-        <Grid sm="2" className={classes.titleText}>
+        <Grid item xs={2} className={classes.titleText}>
           Company
         </Grid>
-        <Grid sm="6" className={classes.titleText}>
+        <Grid item xs={6} className={classes.titleText}>
           Map
         </Grid>
       </Grid>
@@ -260,7 +263,7 @@ class ClientsData extends Component {
       <Paper className={classes.clientsData}>
         {this.getTitleRow()}
         <Divider />
-        <Grid container spacing={24} className={classes.clientData}>
+        <Grid container spacing={24} className={classes.dataWrapper}>
           <Grid item xs={2}>
             <ListDisplay
               displayedList={this.state.countries}
