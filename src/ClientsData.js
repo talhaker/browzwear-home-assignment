@@ -34,7 +34,7 @@ const styles = theme => ({
     borderRadius: "10px"
   },
   dataWrapper: {
-    paddingBottom: "20px"
+    paddingBottom: "5px"
   },
   titleBox: {
     paddingLeft: "10px",
@@ -263,7 +263,7 @@ class ClientsData extends Component {
       <Paper className={classes.clientsData}>
         {this.getTitleRow()}
         <Divider />
-        <Grid container spacing={24} className={classes.dataWrapper}>
+        <Grid container spacing={0} className={classes.dataWrapper}>
           <Grid item xs={2}>
             <ListDisplay
               displayedList={this.state.countries}

@@ -7,6 +7,7 @@ import Divider from "@material-ui/core/Divider";
 
 const styles = theme => ({
   listContainer: {
+    justifyContent: "left",
     height: "360px",
     maxHeight: "360px",
     overflowY: "scroll"

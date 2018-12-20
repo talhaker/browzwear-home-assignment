@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import { Map, Marker, GoogleApiWrapper } from "google-maps-react";
 
 const mapStyles = {
-  width: "40%",
-  height: "350px",
-  position: "relative"
+  marginLeft: "20px",
+  marginRight: "20px",
+  maxWidth: "40%",
+  height: "360px",
+  justifyContent: "center"
 };
 
 export class MapDisplay extends Component {
