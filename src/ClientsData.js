@@ -7,7 +7,6 @@ import Paper from "@material-ui/core/Paper";
 import Divider from "@material-ui/core/Divider";
 import Grid from "@material-ui/core/Grid";
 import Geocode from "react-geocode";
-import clients from "./data/clients.json";
 
 const GOOGLE_APIKEY = "AIzaSyCw39CndLvjlQUrWXPKX-mZa00g4Gc9p2M";
 
@@ -78,7 +77,8 @@ class ClientsData extends Component {
   // Read client data from json
   // Prepare initial lists to be displayed
   getClientData = () => {
-    const customers = clients.Customers;
+    const jsonData = require("./data/clients.json");
+    const customers = jsonData.Customers;
     const byCountry = this.groupBy(customers, "Country");
 
     const clientData = {};
