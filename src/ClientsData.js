@@ -9,6 +9,7 @@ import Grid from "@material-ui/core/Grid";
 import Geocode from "react-geocode";
 
 const GOOGLE_APIKEY = "AIzaSyCw39CndLvjlQUrWXPKX-mZa00g4Gc9p2M";
+const CLIENT_DATA_PATH = "./data/clients.json";
 
 const styles = theme => ({
   root: {
@@ -77,7 +78,17 @@ class ClientsData extends Component {
   // Read client data from json
   // Prepare initial lists to be displayed
   getClientData = () => {
-    const jsonData = require("./data/clients.json");
+    // Check if "clients.json" exists
+    const tryRequire = path => {
+      try {
+        return require(`${path}`);
+      } catch (err) {
+        return null;
+      }
+    };
+    const jsonData = tryRequire(CLIENT_DATA_PATH);
+    // If no data available, lists remain empty
+    if (!jsonData) return;
     const customers = jsonData.Customers;
     const byCountry = this.groupBy(customers, "Country");
 
